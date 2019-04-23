@@ -64,8 +64,8 @@
                 <td>${atividade.getTotalHorasFinanceira()}</td>
                 <td>${atividade.getTotalHorasExecutiva()}</td>
               <td>
-                <a href="editar-atividade/${atividade.getId()}.html" class="btn-floating btn-small orange"><i class="material-icons left">edit</i></a>
-                <a href="excluir-atividade/${atividade.getId()}.html" class="btn-floating btn-small red"><i class="material-icons left">delete</i></a>
+                <a href="/editar-atividade/${atividade.getId()}.html" class="btn-floating btn-small orange"><i class="material-icons left">edit</i></a>
+                <a href="/excluir-atividade/${atividade.getId()}.html" class="btn-floating btn-small red"><i class="material-icons left">delete</i></a>
               </td>
             </tr>
             </c:forEach>

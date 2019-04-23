@@ -48,7 +48,7 @@ public class AtividadeController {
     @RequestMapping(value = "salvar-atividade.html", method = RequestMethod.POST)
     public RedirectView salvarAtividade(Atividade atividade) {
         atividadeRepository.save(atividade);
-        return new RedirectView("atividades.html");
+        return new RedirectView("/atividades.html");
     }
 
     @RequestMapping("editar-atividade/{id}.html")
@@ -68,8 +68,8 @@ public class AtividadeController {
     }
 
     @RequestMapping("excluir-atividade/{id}.html")
-    public RedirectView excluirSede(@PathVariable Long id) {
+    public RedirectView excluirAtividade(@PathVariable Long id) {
         atividadeRepository.deleteById(id);
-        return new RedirectView("atividade.html");
+        return new RedirectView("/atividades.html");
     }
 }
