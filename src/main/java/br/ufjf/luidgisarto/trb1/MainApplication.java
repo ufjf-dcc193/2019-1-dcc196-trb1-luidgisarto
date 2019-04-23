@@ -1,6 +1,5 @@
 package br.ufjf.luidgisarto.trb1;
 
-import java.time.LocalDate;
 import java.util.Date;
 
 import org.springframework.boot.SpringApplication;
@@ -30,8 +29,7 @@ public class MainApplication {
 
 			Membro m = new Membro("Membro" + i, "Developer", "developer@gmail.com", new Date(), new Date(), sede);
 
-			Atividade a = new Atividade("Atividade" + i, "Descrição " + i, LocalDate.now(), LocalDate.now(), 10, 20, 10,
-					20, s);
+			Atividade a = new Atividade("Atividade" + i, "Descrição " + i, new Date(), new Date(), 10, 20, 10, 20, s);
 
 			atividadeRep.save(a);
 			membroRep.save(m);

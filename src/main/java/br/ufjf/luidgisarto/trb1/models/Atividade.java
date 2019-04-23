@@ -1,6 +1,6 @@
 package br.ufjf.luidgisarto.trb1.models;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -27,10 +29,12 @@ public class Atividade {
     private String descricao;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate dataInicio;
+    @Temporal(TemporalType.DATE)
+    private Date dataInicio;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate dataFim;
+    @Temporal(TemporalType.DATE)
+    private Date dataFim;
     private Integer totalHorasAssistencial;
     private Integer totalHorasJuridica;
     private Integer totalHorasFinanceira;
@@ -44,7 +48,7 @@ public class Atividade {
 
     }
 
-    public Atividade(String titulo, String descricao, LocalDate dataInicio, LocalDate dataFim, Integer assistencial,
+    public Atividade(String titulo, String descricao, Date dataInicio, Date dataFim, Integer assistencial,
             Integer juridica, Integer financeira, Integer executiva, Sede sede) {
         this.titulo = titulo;
         this.descricao = descricao;
@@ -102,28 +106,28 @@ public class Atividade {
     /**
      * @return the dataInicio
      */
-    public LocalDate getDataInicio() {
+    public Date getDataInicio() {
         return dataInicio;
     }
 
     /**
      * @param dataInicio the dataInicio to set
      */
-    public void setDataInicio(LocalDate dataInicio) {
+    public void setDataInicio(Date dataInicio) {
         this.dataInicio = dataInicio;
     }
 
     /**
      * @return the dataFim
      */
-    public LocalDate getDataFim() {
+    public Date getDataFim() {
         return dataFim;
     }
 
     /**
      * @param dataFim the dataFim to set
      */
-    public void setDataFim(LocalDate dataFim) {
+    public void setDataFim(Date dataFim) {
         this.dataFim = dataFim;
     }
 

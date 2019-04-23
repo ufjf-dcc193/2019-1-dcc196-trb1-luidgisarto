@@ -1,7 +1,6 @@
 package br.ufjf.luidgisarto.trb1.models;
 
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.persistence.*;

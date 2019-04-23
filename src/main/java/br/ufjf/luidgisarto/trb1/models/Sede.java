@@ -1,9 +1,7 @@
 package br.ufjf.luidgisarto.trb1.models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 /**
  * Sede
@@ -20,6 +18,9 @@ public class Sede {
     private String bairro;
     private String telefone;
     private String enderecoWeb;
+
+    @OneToMany(mappedBy = "sede")
+    private List<Atividade> atividades;
 
     public Sede() {
 
@@ -132,4 +133,11 @@ public class Sede {
         this.nomeFantasia = nomeFantasia;
     }
 
+    public List<Atividade> getAtividades() {
+        return atividades;
+    }
+
+    public void setAtividades(List<Atividade> atividades) {
+        this.atividades = atividades;
+    }
 }

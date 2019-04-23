@@ -18,6 +18,7 @@ import br.ufjf.luidgisarto.trb1.repositories.SedeRepository;
  */
 @Controller
 public class SedeController {
+
     @Autowired
     private SedeRepository sedeRepository;
 

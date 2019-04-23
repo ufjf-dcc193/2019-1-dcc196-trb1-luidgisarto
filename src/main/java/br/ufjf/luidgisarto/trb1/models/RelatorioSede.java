@@ -7,13 +7,18 @@ package br.ufjf.luidgisarto.trb1.models;
 public class RelatorioSede {
     private Long sedeId;
     private String nomeSede;
-    private Integer qtdAtividades;
-    private Integer totalAssistencial;
-    private Integer totalJuridica;
-    private Integer totalFinanceira;
-    private Integer totalExecutiva;
+    private Long qtdAtividades;
+    private Long totalAssistencial;
+    private Long totalJuridica;
+    private Long totalFinanceira;
+    private Long totalExecutiva;
 
-    /**
+    public RelatorioSede(Long sedeId, Long qtdAtividades) {
+        this.sedeId = sedeId;
+        this.qtdAtividades = qtdAtividades;
+    }
+
+      /**
      * @return the sedeId
      */
     public Long getSedeId() {
@@ -23,70 +28,70 @@ public class RelatorioSede {
     /**
      * @return the qtdAtividades
      */
-    public Integer getQtdAtividades() {
+    public Long getQtdAtividades() {
         return qtdAtividades;
     }
 
     /**
      * @param qtdAtividades the qtdAtividades to set
      */
-    public void setQtdAtividades(Integer qtdAtividades) {
+    public void setQtdAtividades(Long qtdAtividades) {
         this.qtdAtividades = qtdAtividades;
     }
 
     /**
      * @return the totalExecutiva
      */
-    public Integer getTotalExecutiva() {
+    public Long getTotalExecutiva() {
         return totalExecutiva;
     }
 
     /**
      * @param totalExecutiva the totalExecutiva to set
      */
-    public void setTotalExecutiva(Integer totalExecutiva) {
+    public void setTotalExecutiva(Long totalExecutiva) {
         this.totalExecutiva = totalExecutiva;
     }
 
     /**
      * @return the totalFinanceira
      */
-    public Integer getTotalFinanceira() {
+    public Long getTotalFinanceira() {
         return totalFinanceira;
     }
 
     /**
      * @param totalFinanceira the totalFinanceira to set
      */
-    public void setTotalFinanceira(Integer totalFinanceira) {
+    public void setTotalFinanceira(Long totalFinanceira) {
         this.totalFinanceira = totalFinanceira;
     }
 
     /**
      * @return the totalJuridica
      */
-    public Integer getTotalJuridica() {
+    public Long getTotalJuridica() {
         return totalJuridica;
     }
 
     /**
      * @param totalJuridica the totalJuridica to set
      */
-    public void setTotalJuridica(Integer totalJuridica) {
+    public void setTotalJuridica(Long totalJuridica) {
         this.totalJuridica = totalJuridica;
     }
 
     /**
      * @return the totalAssistencial
      */
-    public Integer getTotalAssistencial() {
+    public Long getTotalAssistencial() {
         return totalAssistencial;
     }
 
     /**
      * @param totalAssistencial the totalAssistencial to set
      */
-    public void setTotalAssistencial(Integer totalAssistencial) {
+    public void setTotalAssistencial(Long totalAssistencial) {
         this.totalAssistencial = totalAssistencial;
     }
 
