@@ -1,12 +1,9 @@
 package br.ufjf.luidgisarto.trb1.models;
 
-import javax.persistence.Entity;
-
 /**
  * RelatorioSede
  */
 
-@Entity
 public class RelatorioSede {
     private Long sedeId;
     private String nomeSede;
