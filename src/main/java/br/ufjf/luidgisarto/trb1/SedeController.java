@@ -41,7 +41,7 @@ public class SedeController {
     @RequestMapping(value = "salvar-sede.html", method = RequestMethod.POST)
     public RedirectView salvarSede(Sede sede) {
         sedeRepository.save(sede);
-        return new RedirectView("sedes.html");
+        return new RedirectView("/sedes.html");
     }
 
     @RequestMapping("editar-sede/{id}.html")
@@ -60,6 +60,6 @@ public class SedeController {
     @RequestMapping("excluir-sede/{id}.html")
     public RedirectView excluirSede(@PathVariable Long id) {
         sedeRepository.deleteById(id);
-        return new RedirectView("sedes.html");
+        return new RedirectView("/sedes.html");
     }
 }

@@ -1,4 +1,5 @@
 <%@page pageEncoding="utf-8"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html>
 <html>
 
@@ -27,7 +28,7 @@
         </div>
     </nav>
     <div class="container">
-    <form action="salvar-sede.html" method="post">
+    <form action="/salvar-sede.html" method="POST">
         <div class="card" style="margin-top:5em;">
             <div class="card-content">
             <span class="card-title">Manter Sede</span>
