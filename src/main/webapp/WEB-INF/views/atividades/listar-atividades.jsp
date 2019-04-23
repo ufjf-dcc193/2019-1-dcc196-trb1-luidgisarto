@@ -1,4 +1,5 @@
 <%@page pageEncoding="utf-8"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html>
 <html>
 
@@ -17,19 +18,19 @@
 <body>
   <nav>
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo center">Equilibrium</a>
+      <a href="/index.html" class="brand-logo center">Equilibrium</a>
       <ul class="left hide-on-med-and-down">
-        <li><a href="index.html">Início</a></li>
-        <li><a href="sedes.html">Sedes</a></li>
-        <li><a href="membros.html">Membros</a></li>
-        <li class="active"><a href="atividades.html">Atividades</a></li>
+        <li><a href="/index.html">Início</a></li>
+        <li><a href="/sedes.html">Sedes</a></li>
+        <li><a href="/membros.html">Membros</a></li>
+        <li class="active"><a href="/atividades.html">Atividades</a></li>
       </ul>
     </div>
   </nav>
   <div class="container">
     <div class="row">
       <div class="col s2" style="margin-top: 2em;">
-        <a class="btn-floating waves-effect waves-light green"><i class="material-icons">add</i></a>
+        <a class="btn-floating waves-effect waves-light green" href="cadastrar-atividade.html"><i class="material-icons">add</i></a>
       </div>
       <div class="col s10">
         <h3 class="text-center">Consulta de Atividades</h3>
@@ -40,41 +41,34 @@
         <table>
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Item Name</th>
-              <th>Item Price</th>
+              <th>Título</th>
+              <th>Descrição</th>
+              <th>Data Início</th>
+              <th>Data Fim</th>
+              <th>Total Assistencial</th>
+              <th>Total Jurídica</th>
+              <th>Total Financeira</th>
+              <th>Total Executiva</th>
               <th>Ações</th>
             </tr>
           </thead>
-
           <tbody>
+           <c:forEach var="atividade" items="${atividades}">
             <tr>
-              <td>Alvin</td>
-              <td>Eclair</td>
-              <td>$0.87</td>
+               <td>${atividade.getTitulo()}</td>
+                <td>${atividade.getDescricao()}</td>
+                <td>${atividade.getDataInicio()}</td>
+                <td>${atividade.getDataFim()}</td>
+                <td>${atividade.getTotalHorasAssistencial()}</td>
+                <td>${atividade.getTotalHorasJuridica()}</td>
+                <td>${atividade.getTotalHorasFinanceira()}</td>
+                <td>${atividade.getTotalHorasExecutiva()}</td>
               <td>
-                <a class="btn-floating btn-small orange"><i class="material-icons left">edit</i></a>
-                <a class="btn-floating btn-small red"><i class="material-icons left">delete</i></a>
+                <a href="editar-atividade/${atividade.getId()}.html" class="btn-floating btn-small orange"><i class="material-icons left">edit</i></a>
+                <a href="excluir-atividade/${atividade.getId()}.html" class="btn-floating btn-small red"><i class="material-icons left">delete</i></a>
               </td>
             </tr>
-            <tr>
-              <td>Alan</td>
-              <td>Jellybean</td>
-              <td>$3.76</td>
-              <td>
-                <a class="btn-floating btn-small orange"><i class="material-icons left">edit</i></a>
-                <a class="btn-floating btn-small red"><i class="material-icons left">delete</i></a>
-              </td>
-            </tr>
-            <tr>
-              <td>Jonathan</td>
-              <td>Lollipop</td>
-              <td>$7.00</td>
-              <td>
-                <a class="btn-floating btn-small orange"><i class="material-icons left">edit</i></a>
-                <a class="btn-floating btn-small red"><i class="material-icons left">delete</i></a>
-              </td>
-            </tr>
+            </c:forEach>
           </tbody>
         </table>
       </div>
