@@ -1,7 +1,14 @@
 package br.ufjf.luidgisarto.trb1;
 
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import br.ufjf.luidgisarto.trb1.models.RelatorioSede;
+import br.ufjf.luidgisarto.trb1.repositories.SedeRepository;
 
 /**
  * HomeController
@@ -9,23 +16,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class HomeController {
 
+    @Autowired
+    SedeRepository sedeRepository;
+
     @RequestMapping({ "", "index.html" })
-    public String home() {
-        return "home";
-    }
+    public ModelAndView home() {
+        ModelAndView mv = new ModelAndView();
 
-    @RequestMapping("sedes.html")
-    public String listarSedes() {
-        return "sedes/listar-sedes";
-    }
+        mv.setViewName("home");
 
-    @RequestMapping("membros.html")
-    public String listarMembros() {
-        return "membros/listar-membros";
-    }
+        List<RelatorioSede> relatorioSedes = sedeRepository.FindAllWithActivitiesQuery();
 
-    @RequestMapping("atividades.html")
-    public String listarAtividades() {
-        return "atividades/listar-atividades";
+        mv.addObject("relatorioSedes", relatorioSedes);
+
+        return mv;
     }
 }
