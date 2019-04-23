@@ -1,4 +1,5 @@
 <%@page pageEncoding="utf-8"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 <!DOCTYPE html>
 <html>
 
@@ -29,7 +30,7 @@
   <div class="container">
     <div class="row">
       <div class="col s2" style="margin-top: 2em;">
-        <a class="btn-floating waves-effect waves-light green"><i class="material-icons">add</i></a>
+        <a class="btn-floating waves-effect waves-light green" href="cadastrar-sede.html"><i class="material-icons">add</i></a>
       </div>
       <div class="col s10">
         <h3 class="text-center">Consulta de Sedes</h3>
@@ -40,41 +41,30 @@
         <table>
           <thead>
             <tr>
-              <th>Name</th>
-              <th>Item Name</th>
-              <th>Item Price</th>
+              <th>Nome Fantasia</th>
+              <th>Estado</th>
+              <th>Cidade</th>
+              <th>Bairro</th>
+              <th>Telefone</th>
+              <th>Site</th>
               <th>Ações</th>
             </tr>
           </thead>
-
           <tbody>
+           <c:forEach var="sede" items="${sedes}">
             <tr>
-              <td>Alvin</td>
-              <td>Eclair</td>
-              <td>$0.87</td>
+               <td>${sede.getNomeFantasia()}</td>
+                <td>${sede.getEstadoFederacao()}</td>
+                <td>${sede.getCidade()}</td>
+                <td>${sede.getBairro()}</td>
+                <td>${sede.getTelefone()}</td>
+                <td>${sede.getEnderecoWeb()}</td>
               <td>
-                <a class="btn-floating btn-small orange"><i class="material-icons left">edit</i></a>
-                <a class="btn-floating btn-small red"><i class="material-icons left">delete</i></a>
+                <a href="editar-sede/${sede.getId()}.html" class="btn-floating btn-small orange"><i class="material-icons left">edit</i></a>
+                <a href="excluir-sede/${sede.getId()}.html" class="btn-floating btn-small red"><i class="material-icons left">delete</i></a>
               </td>
             </tr>
-            <tr>
-              <td>Alan</td>
-              <td>Jellybean</td>
-              <td>$3.76</td>
-              <td>
-                <a class="btn-floating btn-small orange"><i class="material-icons left">edit</i></a>
-                <a class="btn-floating btn-small red"><i class="material-icons left">delete</i></a>
-              </td>
-            </tr>
-            <tr>
-              <td>Jonathan</td>
-              <td>Lollipop</td>
-              <td>$7.00</td>
-              <td>
-                <a class="btn-floating btn-small orange"><i class="material-icons left">edit</i></a>
-                <a class="btn-floating btn-small red"><i class="material-icons left">delete</i></a>
-              </td>
-            </tr>
+            </c:forEach>
           </tbody>
         </table>
       </div>
