@@ -1,6 +1,6 @@
 package br.ufjf.luidgisarto.trb1.models;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 /**
  * Membro
@@ -21,8 +23,12 @@ public class Membro {
     private String nomeCompleto;
     private String funcao;
     private String email;
-    private Date dataEntradaFuncao;
-    private Date dataSaidaFuncao;
+
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
+    private LocalDate dataEntradaFuncao;
+
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
+    private LocalDate dataSaidaFuncao;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "sedeId", nullable = false)
@@ -32,7 +38,7 @@ public class Membro {
 
     }
 
-    public Membro(String nome, String funcao, String email, Date dataEntrada, Date dataSaida, Sede sede) {
+    public Membro(String nome, String funcao, String email, LocalDate dataEntrada, LocalDate dataSaida, Sede sede) {
         this.nomeCompleto = nome;
         this.funcao = funcao;
         this.email = email;
@@ -100,28 +106,28 @@ public class Membro {
     /**
      * @return the dataEntradaFuncao
      */
-    public Date getDataEntradaFuncao() {
+    public LocalDate getDataEntradaFuncao() {
         return dataEntradaFuncao;
     }
 
     /**
      * @param dataEntradaFuncao the dataEntradaFuncao to set
      */
-    public void setDataEntradaFuncao(Date dataEntradaFuncao) {
+    public void setDataEntradaFuncao(LocalDate dataEntradaFuncao) {
         this.dataEntradaFuncao = dataEntradaFuncao;
     }
 
     /**
      * @return the dataSaidaFuncao
      */
-    public Date getDataSaidaFuncao() {
+    public LocalDate getDataSaidaFuncao() {
         return dataSaidaFuncao;
     }
 
     /**
      * @param dataSaidaFuncao the dataSaidaFuncao to set
      */
-    public void setDataSaidaFuncao(Date dataSaidaFuncao) {
+    public void setDataSaidaFuncao(LocalDate dataSaidaFuncao) {
         this.dataSaidaFuncao = dataSaidaFuncao;
     }
 

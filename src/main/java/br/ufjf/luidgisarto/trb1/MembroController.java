@@ -46,13 +46,13 @@ public class MembroController {
     }
 
     @RequestMapping(value = "salvar-membro.html", method = RequestMethod.POST)
-    public RedirectView salvarSede(Membro membro) {
+    public RedirectView salvarMembro(Membro membro) {
         membroRepository.save(membro);
-        return new RedirectView("membros.html");
+        return new RedirectView("/membros.html");
     }
 
     @RequestMapping("editar-membro/{id}.html")
-    public ModelAndView editarSede(@PathVariable Long id) {
+    public ModelAndView editarMembro(@PathVariable Long id) {
         ModelAndView mv = new ModelAndView();
 
         Membro membro = membroRepository.getOne(id);
@@ -68,8 +68,8 @@ public class MembroController {
     }
 
     @RequestMapping("excluir-membro/{id}.html")
-    public RedirectView excluirSede(@PathVariable Long id) {
+    public RedirectView excluirMembro(@PathVariable Long id) {
         membroRepository.deleteById(id);
-        return new RedirectView("membros.html");
+        return new RedirectView("/membros.html");
     }
 }

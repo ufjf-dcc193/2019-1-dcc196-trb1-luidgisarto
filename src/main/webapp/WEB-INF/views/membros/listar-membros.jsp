@@ -22,8 +22,8 @@
       <ul class="left hide-on-med-and-down">
         <li><a href="/index.html">Início</a></li>
         <li><a href="/sedes.html">Sedes</a></li>
-        <li><a href="/membros.html">Membros</a></li>
-        <li class="active"><a href="/atividades.html">Atividades</a></li>
+        <li class="active"><a href="/membros.html">Membros</a></li>
+        <li><a href="/atividades.html">Atividades</a></li>
       </ul>
     </div>
   </nav>
@@ -58,8 +58,8 @@
                 <td>${membro.getDataEntradaFuncao()}</td>
                 <td>${membro.getDataSaidaFuncao()}</td>
               <td>
-                <a href="editar-membro/${membro.getId()}.html" class="btn-floating btn-small orange"><i class="material-icons left">edit</i></a>
-                <a href="excluir-membro/${membro.getId()}.html" class="btn-floating btn-small red"><i class="material-icons left">delete</i></a>
+                <a href="/editar-membro/${membro.getId()}.html" class="btn-floating btn-small orange"><i class="material-icons left">edit</i></a>
+                <a href="/excluir-membro/${membro.getId()}.html" class="btn-floating btn-small red"><i class="material-icons left">delete</i></a>
               </td>
             </tr>
             </c:forEach>

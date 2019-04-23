@@ -13,7 +13,7 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <title>Trabalho 1 - Novo Membro</title>
+    <title>Trabalho 1 - Manter Membro</title>
 </head>
 
 <body>
@@ -29,13 +29,13 @@
         </div>
     </nav>
     <div class="container">
-    <form action="salvar-membro.html" method="post">
+    <form action="/salvar-membro.html" method="post">
         <div class="card" style="margin-top:5em;">
             <div class="card-content">
             <span class="card-title">Manter Membro</span>
                 <div class="row">
                 <div class="input-field col s4">
-                    <input id="nomeFantasia" name="nomeCompleto" type="text" class="validate" 
+                    <input id="nomeCompleto" name="nomeCompleto" type="text" class="validate"
                     value="${membro.nomeCompleto}">
                     <label for="nomeCompleto">Nome Completo</label>
                 </div>
@@ -51,18 +51,19 @@
             </div>
             <div class="row">
                 <div class="input-field col s3">
-                    <input id="dataEntradaFuncao" format="dd-mm-yyyy" name="dataEntradaFuncao" type="text" class="validate datepicker" value="${membro.dataEntradaFuncao}">
+                    <input id="dataEntradaFuncao" name="dataEntradaFuncao" type="text" class="validate datepicker"
+                    value="${membro.dataEntradaFuncao}">
                     <label for="dataEntradaFuncao">Data de Entrada</label>
                 </div>
                 <div class="input-field col s3">
-                    <input id="dataSaidaFuncao" format="dd-mm-yyyy" name="dataSaidaFuncao" type="text" class="validate datepicker" value="${membro.dataSaidaFuncao}">
+                    <input id="dataSaidaFuncao" name="dataSaidaFuncao" type="text" class="validate datepicker" value="${membro.dataSaidaFuncao}">
                     <label for="dataSaidaFuncao">Data de Saída</label>
                 </div>
                  <div class="input-field col s6">
                     <select name="sede">
-                        <option value="" disabled selected>Selecione</option>
                         <c:forEach var="sede" items="${sedes}">
-                            <option value="${sede.getId()}">${sede.getNomeFantasia()}</option>
+                            <option value="${sede.getId()}" ${sede.id == membro.sede.id
+                            ? 'selected="selected"' : ''}>${sede.getNomeFantasia()}</option>
                         </c:forEach>
                     </select>
                     <label>Sede</label>
@@ -75,8 +76,8 @@
             <button type="button" class="waves-effect waves-light btn grey">Cancelar</button>
             </div>
         </div>
-        </div>
     </form>
+    </div>
 
     <script>
      $(document).ready(function() {
@@ -97,9 +98,10 @@
             labelMonthSelect: 'Selecione um mês',
             labelYearSelect: 'Selecione um ano',
             selectMonths: true,
+            locale: 'pt-br',
             selectYears: 15,
             },
-            format: 'dd/mm/yyyy',
+            format: 'dd-MM-yyyy',
             container: 'body',
             minDate: new Date(),
         });
