@@ -1,14 +1,10 @@
 package br.ufjf.luidgisarto.trb1.models;
 
-import java.time.LocalDate;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -24,11 +20,13 @@ public class Membro {
     private String funcao;
     private String email;
 
-    @DateTimeFormat(pattern = "dd-MM-yyyy")
-    private LocalDate dataEntradaFuncao;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Temporal(TemporalType.DATE)
+    private Date dataEntradaFuncao;
 
-    @DateTimeFormat(pattern = "dd-MM-yyyy")
-    private LocalDate dataSaidaFuncao;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Temporal(TemporalType.DATE)
+    private Date dataSaidaFuncao;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "sedeId", nullable = false)
@@ -38,7 +36,7 @@ public class Membro {
 
     }
 
-    public Membro(String nome, String funcao, String email, LocalDate dataEntrada, LocalDate dataSaida, Sede sede) {
+    public Membro(String nome, String funcao, String email, Date dataEntrada, Date dataSaida, Sede sede) {
         this.nomeCompleto = nome;
         this.funcao = funcao;
         this.email = email;
@@ -106,28 +104,28 @@ public class Membro {
     /**
      * @return the dataEntradaFuncao
      */
-    public LocalDate getDataEntradaFuncao() {
-        return dataEntradaFuncao;
+    public Date getDataEntradaFuncao() throws ParseException {
+        return this.dataEntradaFuncao;
     }
 
     /**
      * @param dataEntradaFuncao the dataEntradaFuncao to set
      */
-    public void setDataEntradaFuncao(LocalDate dataEntradaFuncao) {
+    public void setDataEntradaFuncao(Date dataEntradaFuncao) {
         this.dataEntradaFuncao = dataEntradaFuncao;
     }
 
     /**
      * @return the dataSaidaFuncao
      */
-    public LocalDate getDataSaidaFuncao() {
-        return dataSaidaFuncao;
+    public Date getDataSaidaFuncao() throws ParseException {
+        return this.dataSaidaFuncao;
     }
 
     /**
      * @param dataSaidaFuncao the dataSaidaFuncao to set
      */
-    public void setDataSaidaFuncao(LocalDate dataSaidaFuncao) {
+    public void setDataSaidaFuncao(Date dataSaidaFuncao) {
         this.dataSaidaFuncao = dataSaidaFuncao;
     }
 

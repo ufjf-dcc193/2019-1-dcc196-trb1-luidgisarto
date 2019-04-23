@@ -101,7 +101,7 @@
             locale: 'pt-br',
             selectYears: 15,
             },
-            format: 'dd-MM-yyyy',
+            format: 'yyyy-mm-dd',
             container: 'body',
             minDate: new Date(),
         });

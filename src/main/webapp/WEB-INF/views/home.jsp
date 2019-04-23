@@ -20,10 +20,10 @@
     <div class="nav-wrapper">
       <a href="/index.html" class="brand-logo center">Equilibrium</a>
       <ul class="left hide-on-med-and-down">
-        <li><a href="/index.html">Início</a></li>
+        <li class="active"><a href="/index.html">Início</a></li>
         <li><a href="/sedes.html">Sedes</a></li>
         <li><a href="/membros.html">Membros</a></li>
-        <li class="active"><a href="/atividades.html">Atividades</a></li>
+        <li><a href="/atividades.html">Atividades</a></li>
       </ul>
     </div>
   </nav>
