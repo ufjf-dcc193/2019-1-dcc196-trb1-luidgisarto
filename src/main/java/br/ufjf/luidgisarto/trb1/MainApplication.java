@@ -29,7 +29,8 @@ public class MainApplication {
 
 			Membro m = new Membro("Membro" + i, "Developer", "developer@gmail.com", new Date(), new Date(), sede);
 
-			Atividade a = new Atividade("Atividade" + i, "Descrição " + i, new Date(), new Date(), 10, 20, 10, 20, s);
+			Atividade a = new Atividade("Atividade" + i, "Descrição " + i, new Date(), new Date(), Long.parseLong("10"), Long.parseLong("20"),
+					Long.parseLong("10"), Long.parseLong("20"), s);
 
 			atividadeRep.save(a);
 			membroRep.save(m);

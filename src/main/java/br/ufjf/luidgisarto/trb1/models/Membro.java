@@ -28,7 +28,7 @@ public class Membro {
     private Date dataSaidaFuncao;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "sedeId", nullable = false)
+    @JoinColumn(name = "sede_id", nullable = false)
     private Sede sede;
 
     public Membro() {

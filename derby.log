@@ -1,11 +1,11 @@
 ----------------------------------------------------------------
-Tue Apr 23 19:50:03 BRT 2019:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-016a-4c64-4d4a-000008b75cb8 
-on database directory E:\Dev\UFJF\trb1\~\trb1.db with class loader sun.misc.Launcher$AppClassLoader@18b4aac2 
-Loaded from file:/C:/Users/lslacerda/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
+Wed Apr 24 01:48:03 BRT 2019:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-016a-4dac-090a-000003b46ff0 
+on database directory C:\Users\luidg\OneDrive\Documentos\UFJF\LAB\2019-1-dcc196-trb1-luidgisarto\~\trb1.db with class loader sun.misc.Launcher$AppClassLoader@18b4aac2 
+Loaded from file:/C:/Users/luidg/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
 java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_181-b13
-user.dir=E:\Dev\UFJF\trb1
+java.runtime.version=1.8.0_192-b12
+user.dir=C:\Users\luidg\OneDrive\Documentos\UFJF\LAB\2019-1-dcc196-trb1-luidgisarto
 os.name=Windows 10
 os.arch=amd64
 os.version=10.0

@@ -35,21 +35,21 @@ public class Atividade {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Temporal(TemporalType.DATE)
     private Date dataFim;
-    private Integer totalHorasAssistencial;
-    private Integer totalHorasJuridica;
-    private Integer totalHorasFinanceira;
-    private Integer totalHorasExecutiva;
+    private Long totalHorasAssistencial;
+    private Long totalHorasJuridica;
+    private Long totalHorasFinanceira;
+    private Long totalHorasExecutiva;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "sedeId", nullable = false)
+    @JoinColumn(name = "sede_id", nullable = false)
     private Sede sede;
 
     public Atividade() {
 
     }
 
-    public Atividade(String titulo, String descricao, Date dataInicio, Date dataFim, Integer assistencial,
-            Integer juridica, Integer financeira, Integer executiva, Sede sede) {
+    public Atividade(String titulo, String descricao, Date dataInicio, Date dataFim, Long assistencial,
+            Long juridica, Long financeira, Long executiva, Sede sede) {
         this.titulo = titulo;
         this.descricao = descricao;
         this.dataInicio = dataInicio;
@@ -134,56 +134,64 @@ public class Atividade {
     /**
      * @return the totalHorasAssistencial
      */
-    public Integer getTotalHorasAssistencial() {
+    public Long getTotalHorasAssistencial() {
         return totalHorasAssistencial;
     }
 
     /**
      * @param totalHorasAssistencial the totalHorasAssistencial to set
      */
-    public void setTotalHorasAssistencial(Integer totalHorasAssistencial) {
+    public void setTotalHorasAssistencial(Long totalHorasAssistencial) {
         this.totalHorasAssistencial = totalHorasAssistencial;
     }
 
     /**
      * @return the totalHorasJuridica
      */
-    public Integer getTotalHorasJuridica() {
+    public Long getTotalHorasJuridica() {
         return totalHorasJuridica;
     }
 
     /**
      * @param totalHorasJuridica the totalHorasJuridica to set
      */
-    public void setTotalHorasJuridica(Integer totalHorasJuridica) {
+    public void setTotalHorasJuridica(Long totalHorasJuridica) {
         this.totalHorasJuridica = totalHorasJuridica;
     }
 
     /**
      * @return the totalHorasFinanceira
      */
-    public Integer getTotalHorasFinanceira() {
+    public Long getTotalHorasFinanceira() {
         return totalHorasFinanceira;
     }
 
     /**
      * @param totalHorasFinanceira the totalHorasFinanceira to set
      */
-    public void setTotalHorasFinanceira(Integer totalHorasFinanceira) {
+    public void setTotalHorasFinanceira(Long totalHorasFinanceira) {
         this.totalHorasFinanceira = totalHorasFinanceira;
     }
 
     /**
      * @return the totalHorasExecutiva
      */
-    public Integer getTotalHorasExecutiva() {
+    public Long getTotalHorasExecutiva() {
         return totalHorasExecutiva;
     }
 
     /**
      * @param totalHorasExecutiva the totalHorasExecutiva to set
      */
-    public void setTotalHorasExecutiva(Integer totalHorasExecutiva) {
+    public void setTotalHorasExecutiva(Long totalHorasExecutiva) {
         this.totalHorasExecutiva = totalHorasExecutiva;
+    }
+
+    public Sede getSede() {
+        return sede;
+    }
+
+    public void setSede(Sede sede) {
+        this.sede = sede;
     }
 }

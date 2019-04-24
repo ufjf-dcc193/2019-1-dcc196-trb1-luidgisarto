@@ -29,7 +29,7 @@
         </div>
     </nav>
     <div class="container">
-    <form action="salvar-atividade.html" method="post">
+    <form action="/salvar-atividade.html" method="post">
         <div class="card" style="margin-top:5em;">
             <div class="card-content">
             <span class="card-title">Manter Atividade</span>
@@ -40,8 +40,7 @@
                     <label for="titulo">Título</label>
                 </div>
                 <div class="input-field col s4">
-                    <textarea id="descricao" class="materialize-textarea"
-                    value="${atividade.descricao}"></textarea>
+                    <input id="descricao" name="descricao" type="text" value="${atividade.descricao}">
                     <label for="descricao">Descrição</label>
                 </div>
                 <div class="input-field col s3">
@@ -92,7 +91,7 @@
             <div class="card-action">
             <input type="hidden" name="id" value="${atividade.id}">
             <button type="submit" class="waves-effect waves-light btn green">Salvar</button>
-            <button type="button" class="waves-effect waves-light btn grey">Cancelar</button>
+            <a href="/atividades.html" class="waves-effect waves-light btn grey">Cancelar</a>
             </div>
         </div>
     </form>
@@ -122,9 +121,8 @@
             locale: 'pt-br',
             selectYears: 15,
             },
-            format: 'dd-mm-yyyy',
+           format: 'yyyy-mm-dd',
             container: 'body',
-            minDate: new Date(),
         });
 });
     </script>

@@ -13,9 +13,15 @@ public class RelatorioSede {
     private Long totalFinanceira;
     private Long totalExecutiva;
 
-    public RelatorioSede(Long sedeId, Long qtdAtividades) {
+    public RelatorioSede(Long sedeId, String nomeSede, Long qtdAtividades, Long totalAssistencial,
+                         Long totalJuridica, Long totalFinanceira, Long totalExecutiva) {
         this.sedeId = sedeId;
+        this.nomeSede = nomeSede;
         this.qtdAtividades = qtdAtividades;
+        this.totalAssistencial = totalAssistencial;
+        this.totalJuridica = totalJuridica;
+        this.totalExecutiva = totalExecutiva;
+        this.totalFinanceira = totalFinanceira;
     }
 
       /**

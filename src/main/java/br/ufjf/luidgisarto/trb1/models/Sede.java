@@ -22,6 +22,9 @@ public class Sede {
     @OneToMany(mappedBy = "sede")
     private List<Atividade> atividades;
 
+    @OneToMany(mappedBy = "sede")
+    private List<Membro> membros;
+
     public Sede() {
 
     }

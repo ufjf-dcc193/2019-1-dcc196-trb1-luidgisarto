@@ -66,7 +66,7 @@
             <div class="card-action">
             <input type="hidden" name="id" value="${sede.id}">
             <button type="submit" class="waves-effect waves-light btn green">Salvar</button>
-            <button type="button" class="waves-effect waves-light btn grey">Cancelar</button>
+                <a href="/sedes.html" class="waves-effect waves-light btn grey">Cancelar</a>
             </div>
         </div>
         </div>

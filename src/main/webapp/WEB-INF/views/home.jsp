@@ -47,7 +47,6 @@
               <th>Total Jurídica</th>
               <th>Total Financeira</th>
               <th>Total Executiva</th>
-              <th>Ações</th>
             </tr>
           </thead>
           <tbody>

@@ -27,7 +27,7 @@ public class AtividadeController {
     private SedeRepository sedeRepository;
 
     @RequestMapping("atividades.html")
-    public ModelAndView listarSedes() {
+    public ModelAndView listarAtividades() {
         ModelAndView mv = new ModelAndView();
         List<Atividade> atividades = atividadeRepository.findAll();
         mv.setViewName("atividades/listar-atividades");
@@ -55,14 +55,14 @@ public class AtividadeController {
     public ModelAndView editarAtividade(@PathVariable Long id) {
         ModelAndView mv = new ModelAndView();
 
+        mv.setViewName("atividades/cadastrar-atividade");
+
         Atividade atividade = atividadeRepository.getOne(id);
 
         List<Sede> sedes = sedeRepository.findAll();
         mv.addObject("sedes", sedes);
 
         mv.addObject("atividade", atividade);
-
-        mv.setViewName("atividades/cadastrar-atividade");
 
         return mv;
     }
